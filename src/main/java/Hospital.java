@@ -49,7 +49,7 @@ public class Hospital implements Agent {
         int[][] h2preferenceList = h2.getPrefList();
         int prefListLength = preferenceList.length;
         int h2prefListLength = h2preferenceList.length;
-        for (int i = 0;; i++) {
+        iLoop: for (int i = 0;; i++) {
             if (i == prefListLength && h2prefListLength > i + 1) {
                 return -1;
             }
@@ -67,7 +67,7 @@ public class Hospital implements Agent {
                     return 1;
                 }
                 if (p == h2preferenceList[i].length && p == preferenceList[i].length) {
-                    return 0;
+                    continue iLoop;
                 }
                 if (preferenceList[i][p] > h2preferenceList[i][p]) {
                     return 1;

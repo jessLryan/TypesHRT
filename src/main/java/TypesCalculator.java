@@ -29,6 +29,7 @@ public class TypesCalculator {
         BufferedReader residentsBufferedReader = getReader(residentsInput);
         List<Pair<Integer, Agent>> hospitals = readToHospitals2(hospitalsBufferedReader);
         List<Pair<Integer, Agent>> unsortedResidents = readToResidents2(residentsBufferedReader);
+        System.out.println("residents size "+unsortedResidents.size());
         List<Pair<Integer, Agent>> sortedResidents = sortAgents(unsortedResidents);
         List<ArrayList<Pair<Integer, Agent>>> groupedResidents = groupAgentsIdenticalPrefs(sortedResidents);
         List<ArrayList<Pair<Integer, Agent>>> typedResidents = findTypes(groupedResidents, hospitals);
